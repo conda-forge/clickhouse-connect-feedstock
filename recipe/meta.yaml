@@ -8,6 +8,8 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: f1c6a4a20c19612eedaf1cea82e532010942cb08a29326db74cce0ea48bbe56d
+  patches:
+    - cythonize.patch
 
 
 build:
@@ -16,7 +18,7 @@ build:
     - sqlalchemy.dialects.clickhousedb = clickhouse_connect.cc_sqlalchemy.dialect:ClickHouseDialect
     - superset.db_engine_specs.clickhousedb = clickhouse_connect.cc_superset.engine:ClickHouseEngineSpec
   number: 0
-  script: {{ PYTHON }} setup.py build_ext --inplace && {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   skip: true  # [py<37]
 
 requirements:
