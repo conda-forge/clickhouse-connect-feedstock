@@ -17,7 +17,7 @@ build:
     - superset.db_engine_specs.clickhousedb = clickhouse_connect.cc_superset.engine:ClickHouseEngineSpec
   number: 0
   script: {{ PYTHON }} setup.py build_ext --inplace && {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
-  skip: true # [py<37]
+  skip: true  # [py<37]
 
 requirements:
   build:
