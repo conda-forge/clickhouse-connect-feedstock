@@ -15,7 +15,7 @@ build:
     - sqlalchemy.dialects.clickhousedb.connect = clickhouse_connect.cc_sqlalchemy.dialect:ClickHouseDialect
     - sqlalchemy.dialects.clickhousedb = clickhouse_connect.cc_sqlalchemy.dialect:ClickHouseDialect
     - superset.db_engine_specs.clickhousedb = clickhouse_connect.cc_superset.engine:ClickHouseEngineSpec
-  number: 1
+  number: 0
   script: {{ PYTHON }} setup.py build_ext --inplace && {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 requirements:
