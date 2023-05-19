@@ -17,6 +17,7 @@ build:
     - superset.db_engine_specs.clickhousedb = clickhouse_connect.cc_superset.engine:ClickHouseEngineSpec
   number: 0
   script: {{ PYTHON }} setup.py build_ext --inplace && {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+  skip: true # [py<37]
 
 requirements:
   build:
@@ -24,12 +25,11 @@ requirements:
     - {{ compiler('cxx') }}
     - cross-python_{{ target_platform }}      # [build_platform != target_platform]
   host:
-    - python >=3.7
-    - setuptools
+    - python
     - cython ==3.0.0b1
     - pip
   run:
-    - python >=3.7
+    - python
     - certifi
     - urllib3 >=1.26
     - pytz
