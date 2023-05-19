@@ -9,7 +9,7 @@ source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: f1c6a4a20c19612eedaf1cea82e532010942cb08a29326db74cce0ea48bbe56d
   patches:
-    - cythonize.patch
+    - patches/0001-cythonize-correction.patch
 
 
 build:
