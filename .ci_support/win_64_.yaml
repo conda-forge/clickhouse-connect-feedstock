@@ -1,7 +1,8 @@
 c_compiler:
 - vs2019
 channel_sources:
-- conda-forge/label/cython_dev,conda-forge
+- conda-forge
+- conda-forge/label/cython_dev
 channel_targets:
 - conda-forge main
 cxx_compiler:
