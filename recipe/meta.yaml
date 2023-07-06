@@ -23,6 +23,7 @@ requirements:
   run:
     - python >=3.7
     - certifi
+    - importlib_metadata
     - urllib3 >=1.26
     - pytz
     - zstandard
