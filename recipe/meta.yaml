@@ -11,17 +11,21 @@ source:
 
 build:
   number: 0
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install --no-cache . -vv
 
 requirements:
+  build:
+    - python 		      			# [build_platform != target_platform]
+    - cross-python_{{ target_platform }} 	# [build_platform != target_platform]
+    - cython >=3.0.0				# [build_platform != target_platform]
+    - {{ compiler('c') }}
   host:
-    - python >=3.7
+    - python 
     - setuptools
-    - cython ==3.0.0b1
+    - cython >=3.0.0
     - pip
   run:
-    - python >=3.7
+    - python
     - certifi
     - importlib_metadata
     - urllib3 >=1.26
@@ -68,3 +72,4 @@ extra:
   recipe-maintainers:
     - sugatoray
     - gforsyth
+    - genzgd
