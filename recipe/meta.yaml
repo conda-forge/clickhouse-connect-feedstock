@@ -1,5 +1,5 @@
 {% set name = "clickhouse-connect" %}
-{% set version = "0.7.8" %}
+{% set version = "0.7.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/clickhouse-connect-{{ version }}.tar.gz
-  sha256: dad10ba90eabfe215dfb1fef59f2821a95c752988e66f1093ca8590a51539b8f
+  sha256: 9c2fc293138edf95273fef40e02181f1ff84a44a184ddb5cb861a82a21edbbd6
 
 build:
   number: 0
@@ -19,6 +19,7 @@ requirements:
     - cross-python_{{ target_platform }}    # [build_platform != target_platform]
     - cython                                # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - setuptools
