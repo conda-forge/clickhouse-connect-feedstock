@@ -1,5 +1,5 @@
 {% set name = "clickhouse-connect" %}
-{% set version = "0.8.2" %}
+{% set version = "0.8.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/clickhouse-connect-{{ version }}.tar.gz
-  sha256: 730b3624aee028b0020ba7a79478d013d0c7f43499415b0360dd68a9d1a9a950
+  sha256: 0575a1fc93265a9867045b1cdaf92f9cbfccf6e72e30079b410a8930d41d6a33
 
 build:
   number: 0
