@@ -1,5 +1,5 @@
 {% set name = "clickhouse-connect" %}
-{% set version = "1.7.1" %}
+{% set version = "1.7.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: b981e9596b59492602a949e5729fe91d01cda8aca08f561e4be43626a2e4e636
+  sha256: 5455cba40dc1972b3b1f3feb0216099630eb631975ee4ef70bcf1d949944437b
 
 build:
   number: 0
